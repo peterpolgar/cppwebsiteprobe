@@ -1,0 +1,61 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 7em 0 7em;
+}
+h2 {
+  border-bottom: 3px solid orange;
+  padding-bottom: 0.2em;
+  margin-bottom: 0;
+}
+h3 {
+  padding: 0.5em 0 0.2em 0.75em;
+  margin-top: 0.5em;
+  margin-bottom: .3em;
+  font-size: 132%;
+  font-weight: bold;
+  line-height: 1.2em;
+  border-bottom: 1px solid black;
+}
+h3.ex {
+  border-bottom: none;
+}
+pre {
+  font: normal normal 1em/1.2em Hack;
+  margin: 0;
+  padding: 0;
+  background: none;
+  vertical-align: top;
+  border: 0px none white;
+  border-radius: 5px;
+  width: 55em;
+  overflow: auto;
+  line-height: normal;
+}
+.ccon {
+  margin: 0 0 1em 0;
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 1em;
+  width: 55em;
+  background-color: #F9F9F9;
+  overflow: auto;
+}
+.wikitable {
+  margin: 1em 0;
+  background-color: #f9f9f9;
+  border: 1px #aaa solid;
+  border-collapse: collapse;
+  color: black;
+  margin-left:auto; 
+  margin-right:auto;
+  line-height: 1.2em;
+}
+table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > * > tr > th, table.wikitable > * > tr > td {
+  border: 1px #aaa solid;
+  padding: 0.2em;
+  background-color: #f2f2f2;
+}
+table.wikitable > tr > th, table.wikitable > * > tr > th {
+  background-color: #ECECEC;
+  text-align: center;
+}

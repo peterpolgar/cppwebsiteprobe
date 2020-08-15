@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practical C++ reference</title>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function setHeight(){
+      var rtb = document.getElementById("rtable");
+      var rect = rtb.getBoundingClientRect();
+      if (rect.top >= 0) {
+        rtb.style.height = window.innerHeight - rect.top + "px";
+      }
+      var ltb = document.getElementById("ltable");
+      var rect2 = ltb.getBoundingClientRect();
+      if (rect2.top >= 0) {
+        ltb.style.height = window.innerHeight - rect2.top + "px";
+      }
+    };
+    function Resizing(){
+      setHeight();
+      var frame = document.getElementById("myFrame");
+      frame.height = frame.contentWindow.document.body.scrollHeight + 100 + 'px';
+    }
+  </script>
+</head>
+<body bgcolor="#EEEEEE" onscroll="setHeight()" onresize="Resizing()">
+  <h1 id="fh1" align="center">Practical core C++ reference with optimization tips</h1>
+  <p align="center">Based on: <a href="https://en.cppreference.com/w/" target="_blank">cppreference.com</a>. Other used resources: <a href="alma.html" target="theframe" onclick="document.getElementById('divframe').scrollIntoView({behavior: 'smooth'});">here</a></p>
+  <table class="pre" style="width: 30%" align="center">
+    <tr>
+      <th id="pre-th">
+         <i>Categories</i>
+         <div id="catdiv">
+           <a onclick="document.getElementById('rc1').click();">Category 1</a>
+           <a onclick="document.getElementById('rc2').click();">Category 2</a>
+           <a onclick="document.getElementById('rc3').click();">Category 3</a>
+         </div>
+      </th>
+      <th id="Logical" class="thClicked" onclick="document.getElementById('fh1').scrollIntoView({behavior: 'smooth'});">Logical</th>
+      <th id="Abc" onclick="document.getElementById('fh1').scrollIntoView({behavior: 'smooth'});">Abc</th>
+      <th id="Qt" onclick="document.getElementById('fh1').scrollIntoView({behavior: 'smooth'});">Qt</th>
+    </tr>
+  </table>
+  <div id="ltable">
+    <ul>
+      <li><a id="lLogical" class="ltableClicked">Logical</a></li>
+      <li><a id="lAbc">Abc</a></li>
+      <li><a id="lQt">Qt</a></li>
+    </ul>
+    <div id="lCLog">
+      <button id="ll1" class="collapsible"><b>Basic concepts</b></button>
+      <div class="content">
+        <p>
+          <a href="basicConcepts/comments.html" target="theframe" onclick="document.getElementById('divframe').scrollIntoView({behavior: 'smooth'}); document.title = 'Comments'">Comments</a><br>
+          <a href="basicConcepts/ascii_chart.html" target="theframe" onclick="document.getElementById('divframe').scrollIntoView({behavior: 'smooth'}); document.title = 'ASCII Chart'">ASCII Chart</a><br>
+          <a href="#">Szilva</a>
+        </p>
+      </div>
+      <button class="collapsible"><b>Basic strings</b></button>
+      <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p></div>
+      <button class="collapsible"><b>Basic chars</b></button>
+      <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p></div>
+    </div>
+    <div id="lCAbc" style="display: none;">
+      <button class="collapsible"><b>A</b></button>
+      <div class="content">
+        <p>
+          <a href="#">Alma</a><br>
+          <a href="#">Korte</a><br>
+          <a href="#">Szilva</a>
+        </p>
+      </div>
+      <button class="collapsible"><b>B</b></button>
+      <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p></div>
+      <button class="collapsible"><b>C</b></button>
+      <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p></div>
+    </div>
+    <div id="lCQt" style="display: none;">
+      <button class="collapsible"><b>Qt concepts</b></button>
+      <div class="content">
+        <p>
+          <a href="#">Alma</a><br>
+          <a href="#">Korte</a><br>
+          <a href="#">Szilva</a>
+        </p>
+      </div>
+      <button class="collapsible"><b>Qt strings</b></button>
+      <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p></div>
+      <button class="collapsible"><b>Qt chars</b></button>
+      <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p></div>
+    </div>
+  </div>
+  <div id="rtable">
+    <div><a href="#">Category 1</a></div>
+    <div><a href="#">Category 2</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 3</a></div>
+    <div><a href="#">Category 4</a></div>
+  </div>
+  <table id="logCont" class="maintable" align="center">
+    <tr id="maintr">
+      <td>
+        <p><b>Basic concepts</b></p>
+        <div>
+          <p>
+            <a href="basicConcepts/comments.html" target="theframe" onclick="document.getElementById('divframe').scrollIntoView({behavior: 'smooth'}); document.getElementById('lLogical').click(); document.getElementById('ll1').click(); document.title = 'Comments'">Comments</a><br>
+            <a href="basicConcepts/ascii_chart.html" target="theframe" onclick="document.getElementById('divframe').scrollIntoView({behavior: 'smooth'});  document.getElementById('lLogical').click(); document.getElementById('ll1').click(); document.title = 'ASCII Chart'">ASCII Chart</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Basic strings</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Basic chars</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+      </td>
+      <td>
+        <p><b>Basic concepts</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Basic strings</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Basic chars</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+      </td>
+      <td>
+        <p><b>Basic concepts</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Basic strings</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Basic chars</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <table id="abcCont" class="maintable" align="center" style="display: none;">
+    <tr id="maintr">
+      <td>
+        <p><b>A</b></p>
+        <div>
+          <p>
+            <a href="alma.html" target="theframe" onclick="document.getElementById('divframe').scrollIntoView({behavior: 'smooth'});">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>B</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>C</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+      </td>
+      <td>
+        <p><b>D</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>E</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>F</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+      </td>
+      <td>
+        <p><b>G</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>H</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>I</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <table id="qtCont" class="maintable" align="center" style="display: none;">
+    <tr id="maintr">
+      <td>
+        <p><b>Qt concepts</b></p>
+        <div>
+          <p>
+            <a href="alma.html" target="theframe" onclick="document.getElementById('divframe').scrollIntoView({behavior: 'smooth'});">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Qt strings</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Qt chars</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+      </td>
+      <td>
+        <p><b>Qt concepts</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Qt strings</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Qt chars</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+      </td>
+      <td>
+        <p><b>Qt concepts</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Qt strings</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+        <p><b>Qt chars</b></p>
+        <div>
+          <p>
+            <a href="">Alma</a><br>
+            <a href="">Korte</a><br>
+            <a href="">Szilva</a><br>
+          </p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div id="divframe" align="center">
+    <iframe id="myFrame" name="theframe" frameborder="0" onload="this.height = this.contentWindow.document.body.scrollHeight + 100 + 'px';"></iframe>
+  </div>
+  <script src="cppRef.js"></script>
+  <!-- <script>
+    var actObj = {}, prevObj = {};
+    function klikk() {
+      prevObj = actObj;
+      actObj = this;
+    }
+  </script> -->
+</body>
+</html>

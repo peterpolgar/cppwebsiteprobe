@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../subPageStyle.css">
+  <link rel="stylesheet" href="../hack.css">
+</head>
+<body>
+  <h2>Comments</h2>
+  <h3 class="ex">Example</h3>
+  <div class="ccon">
+      <pre class="cpp"><span style="color: #ff0000; font-style: italic;">/* Comments can contain
+multiple lines */</span>
+
+<span style="color: #ff0000; font-style: italic;">/* or just one */</span>
+&nbsp;
+<span style="color: #666666;">// comment one line</span></pre>
+  </div>
+  <h3>Properties</h3>
+  <p>All comments are removed from the program at translation phase 3 by replacing each comment with a single whitespace character.</p>
+  <h3>Notes</h3>
+  <p>Besides commenting out, other mechanisms used for source code exclusion are:</p>
+  <div class="ccon">
+    <pre class="cpp"><span style="color: #339900;">#if 0</span>
+    std<span style="color: #008080;">::</span><span style="color: #0000dd;">cout</span> <span style="color: #000080;">&lt;&lt;</span> <span style="color: #FF0000;">&quot;this will not be executed or even compiled<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #008080;">;</span>
+<span style="color: #339900;">#endif</span></pre>
+  </div>
+  <p>and</p>
+  <div class="ccon">
+    <pre class="cpp"><span style="color: #0000ff;">if</span><span style="color: #008000;">&#40;</span><span style="color: #0000ff;">false</span><span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span>
+    std<span style="color: #008080;">::</span><span style="color: #0000dd;">cout</span> <span style="color: #000080;">&lt;&lt;</span> <span style="color: #FF0000;">&quot;this will not be executed<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span>
+<span style="color: #008000;">&#125;</span></pre>
+  </div>
+  <hr>
+</body>
+</html>
